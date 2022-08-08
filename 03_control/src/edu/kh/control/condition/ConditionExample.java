@@ -71,7 +71,7 @@ public class ConditionExample {
 			if(input == 0) {	// 짝수인 경우
 				System.out.println("0 입니다.");
 			}else {
-				System.out.println("짝수 입니다.");
+				System.out.println("짝수5 입니다.");
 			}
 		}
 		
