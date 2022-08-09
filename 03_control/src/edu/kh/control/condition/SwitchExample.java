@@ -204,6 +204,62 @@ public class SwitchExample {
 	}
 	
 	
+	public void ex5() {
+		
+		// switch문의 break 역할
+		
+		// 계절 판별(switch 버전)
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("달 입력 : ");
+		int month = sc.nextInt();
+		
+		String season;
+		
+		//switch문에서 break는
+		//"해당 case를 수행한 후 멈춰라" 라는 뜻
+		
+		// break가 없을 경우
+		//-> 다음 case가 연달아서 수행된다!
+		    
+		switch(month) {
+		case 3:	 case 4:  case 5:  season = "봄";   break;
+		 
+		case 6:	 case 7:  case 8:  season = "여름"; break;
+		 
+		case 9:	 case 10: case 11: season = "가을"; break;
+		 
+		case 12: case 1:  case 2:  season = "겨울"; break;
+		
+		default : season = "잘못 입력 하셨습니다.";
+		
+		}
+		System.out.println(season);
+	} 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
