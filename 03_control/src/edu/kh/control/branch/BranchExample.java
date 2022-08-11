@@ -216,7 +216,88 @@ public class BranchExample {
 	
 	
 	
-	
+	public void rpsGame() {
+		
+		   // 가위 바위 보 게임
+		   
+		   // 몇판? : 3
+		   
+		   // 1번째 게임
+		   // 가위/바위/보 중 하나를 입력 해주세요 :  가위
+		   // 컴퓨터는 [보]를 선택했습니다.
+		   // 플레이어 승!
+		   // 현재 기록 : 1승 0무 0패
+		   
+		   // 2번째 게임
+		   // 가위/바위/보 중 하나를 입력 해주세요 :  보
+		   // 컴퓨터는 [보]를 선택했습니다.
+		   // 비겼습니다.
+		   // 현재 기록 : 1승 1무 0패
+		   
+		   // 3번째 게임
+		   // 가위/바위/보 중 하나를 입력 해주세요 :  가위
+		   // 컴퓨터는 [바위]를 선택했습니다.
+		   // 졌습니다ㅠㅠ
+		   // 현재 기록 : 1승 1무 1패
+		
+		
+//		(int)(Math.random() * 3)
+//		--> 0/1/2
+//		
+//		0 -> 가위
+//		1 -> 바위
+//		2 -> 보
+		
+		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int ran = (int)(Math.random() * 3);
+		
+		String rps = "";
+		int prps = 0;
+		if(ran == 0) {
+			rps ="가위";
+		} else if(ran == 1) {
+			rps = "바위";
+		} else {
+			rps = "보";
+		}
+		
+		
+		System.out.println("가위 바위 보 게임\n몇판? : ");
+		int num = sc.nextInt();
+		
+		for(int i = 1; i <= num; i++) {
+			System.out.println(i+"번째 게임");
+			
+			System.out.println("가위/바위/보 중 하나를 입력 해주세요 :");
+			String input = sc.next();
+			
+			
+			//A.equals(B)   A == B
+			if(input.equals("exit@")){
+				break;
+			}
+			
+			if(input.equals("가위")) {
+				prps = 0;
+			} else if{
+				
+			} else {
+				
+			}
+			
+			System.out.println("컴퓨터는 ["+ rps +"]를 선택했습니다.");
+
+			if(input)
+			
+		}
+		
+		
+		
+
+	}
 	
 	
 	
