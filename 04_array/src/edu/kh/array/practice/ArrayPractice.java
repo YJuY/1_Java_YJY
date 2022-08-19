@@ -394,18 +394,74 @@ public class ArrayPractice {
 	public void practice18() {
 		int[][] arr = new int[4][4];
 		
-		int ran = (int)(Math.random()*9+1);
+		//랜덤 대입
+		for(int i = 0; i<arr.length; i++) {
+			
+			for(int j = 0; j<arr.length-1;j++) {
+				
+				int ran = (int)(Math.random()*9+1);
+				arr[i][j] = ran;
+				
+				arr[i][3] = 0;//행
+				arr[3][j] = 0;//열
+			}
+		}
 		
+		// 행/열 값들 합
+		for(int i = 0; i<arr.length-1; i++) {
+			for(int j = 0; j<arr.length-1;j++) {
+
+				arr[i][3] += arr[i][j];//행
+				arr[3][i] += arr[j][i];//열
+			}
+		}
+		// 총합
+		for(int j = 0; j<arr.length-1;j++) {
+
+			arr[3][3] += arr[j][3] + arr[3][j];
+		}
+		
+		 //결과출력
 		for(int i = 0; i<arr.length; i++) {
 			for(int j = 0; j<arr.length;j++) {
-				arr[i][j] = ran;
+				System.out.printf("%4d",arr[i][j]);
+			}
+			System.out.println();
+		}
+	}
+//	--------------------------------------------------------------------
+	
+	public void practice19() {
+		Scanner sc = new Scanner(System.in);
+		
+		for(int i = 0; i>=0; i++) {
+			System.out.print("행 크기 : ");
+			int row = sc.nextInt();
+			
+			System.out.print("열 크기 : ");
+			int col = sc.nextInt();
+			
+			if(!(row >=1 && row <= 10 && col >=1 && col <=10)) {
+				System.out.println("반드시 1~10 사이의 정수를 입력해야 합니다.");
+				continue;
+			} else {
+				
+				char[][] arr = new char[row][col];
+				for(int x = 0; x<row-1; x++ ) {
+					
+					for(int y = 0; y<col-1; y++ ) {
+						
+						char ran = (char)(Math.random()*64+1);
+						arr[x][y]=ran;
+						System.out.println(arr[x][y]+" ");
+					}
+					System.out.println();
+				}
+				break;
 			}
 		}
 	}
-	
-	public void practice19() {
-		
-	}
+//	--------------------------------------------------------------------
 	public void practice20() {
 		
 	}
