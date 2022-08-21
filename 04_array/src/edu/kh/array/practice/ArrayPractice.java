@@ -3,6 +3,8 @@ package edu.kh.array.practice;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import javax.net.ssl.SSLContext;
+
 public class ArrayPractice {
 
 	public void practice1() {
@@ -447,13 +449,13 @@ public class ArrayPractice {
 			} else {
 				
 				char[][] arr = new char[row][col];
-				for(int x = 0; x<row-1; x++ ) {
+				for(int x = 0; x<row; x++ ) {
 					
-					for(int y = 0; y<col-1; y++ ) {
+					for(int y = 0; y<col; y++ ) {
 						
-						char ran = (char)(Math.random()*64+1);
+						char ran = (char) (Math.random()*26+65);
 						arr[x][y]=ran;
-						System.out.println(arr[x][y]+" ");
+						System.out.print(arr[x][y]+" ");
 					}
 					System.out.println();
 				}
@@ -463,21 +465,167 @@ public class ArrayPractice {
 	}
 //	--------------------------------------------------------------------
 	public void practice20() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("행의 크기 : ");
+		int row = sc.nextInt();
 		
+		
+		for(int i = 0; i<row;i++) {
+				System.out.print(i+"열의 크기 : ");
+				int col = sc.nextInt();
+			
+			for(int j = 0; j < row; j++) {
+				char[][] arr = new char[row][col];
+				
+				
+				System.out.println(arr[i][j]);
+			}
+			
+		}
+		
+		
+
 	}
 	
 	public void practice21() {
+		String[][] arr = new String[3][2]; 
+		String[] students = {"강건강", "남나나", "도대담", "류라라", "문미미", "박보배", 
+				"송성실", "윤예의", "진재주", "차천축", "피풍표", "홍하하"};
+		System.out.println("== 1분단 ==");
+
 		
+		for(int s = 0; s<students.length; s++) {
+			
+			for(int row = 0; row<3; row++) {
+				for(int col = 0; col<2; col++) {
+					arr[row][col] = students[s];
+					s++;
+					System.out.print(arr[row][col]+"  ");
+				}
+
+				System.out.println();
+			}
+			if(students.length<=s) {
+				break;
+			} else {
+				System.out.println("== 2분단 ==");
+			}
+			s--;
+		}	
 	}
 	
 	public void practice22() {
+		Scanner sc = new Scanner(System.in);
+		String[][] arr = new String[3][2]; 
+		String[] students = {"강건강", "남나나", "도대담", "류라라", "문미미", "박보배", 
+				"송성실", "윤예의", "진재주", "차천축", "피풍표", "홍하하"};
+		System.out.println("== 1분단 ==");
+
+		
+		for(int s = 0; s<students.length; s++) {
+			
+			for(int row = 0; row<3; row++) {
+				for(int col = 0; col<2; col++) {
+					arr[row][col] = students[s];
+					s++;
+					System.out.print(arr[row][col]+"  ");
+				}
+
+				System.out.println();
+			}
+			if(students.length<=s) {
+				break;
+			} else {
+				System.out.println("== 2분단 ==");
+			}
+			s--;
+		}	
+		
+		System.out.println("검색할 학생 이름을 입력하세요 : ");
+		String input = sc.next();
+		switch (input) {
+		case "강건강": 
+			System.out.println("검색하신 강건강 학생은 1분단 1번째 줄 오른쪽에 있습니다.");
+		}
 		
 	}
 	public void practice23() {
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.print("행 인덱스 입력 : ");
+		int input1 = sc.nextInt();
+
+		System.out.print("열 인덱스 입력 : ");
+		int input2 = sc.nextInt();
+		
+		
+		String[][] arr = new String[6][6];
+		int a=0;
+		int b=0;
+		String x = "X";
+		String y = "y";
+		
+		arr[input1+1][input2+1] = x;
+		
+		for(int col = 2; col<6; col++) {
+			a++;
+			arr[1][col]=String.valueOf(a);
+		}
+
+		for(int row = 2; row<6; row++) {//열
+				b++;
+				arr[row][1]=String.valueOf(b);
+		}
+		
+		
+		for(int row = 1; row<6; row++) {//행
+			for(int col = 1; col<6; col++) {
+				System.out.print(arr[row][col]+"   ");
+			}
+			System.out.println();
+		}
 	}
 	
 	public void practice24() {
+		Scanner sc = new Scanner(System.in);
 		
+		int input1 = 0;
+		while (input1 == 99) {
+			System.out.print("행 인덱스 입력 : ");
+			input1 = sc.nextInt();
+			
+			System.out.print("열 인덱스 입력 : ");
+			int input2 = sc.nextInt();
+			
+			
+			String[][] arr = new String[6][6];
+			int a=0;
+			int b=0;
+			String x = "X";
+			String y = "y";
+			
+			arr[input1+1][input2+1] = x;
+			
+			for(int col = 2; col<6; col++) {
+				a++;
+				arr[1][col]=String.valueOf(a);
+			}
+	
+			for(int row = 2; row<6; row++) {//열
+					b++;
+					arr[row][1]=String.valueOf(b);
+			}
+			
+			
+			for(int row = 1; row<6; row++) {//행
+				for(int col = 1; col<6; col++) {
+					System.out.print(arr[row][col]+"   ");
+				}
+				System.out.println();
+			}
+		}
+		System.out.println("프로그램 종료");
 	}
+	
+		
 }
